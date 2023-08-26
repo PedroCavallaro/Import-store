@@ -1,3 +1,13 @@
 .swiper-wrapper {
     position: relative;
 }
+.swiper-pagination {
+    position: relative;
+    margin-top: 1rem;
+}
+.swiper-pagination-bullet {
+    background: rgb(65, 64, 64);
+}
+.swiper-pagination-bullet-active {
+    background: black;
+}
