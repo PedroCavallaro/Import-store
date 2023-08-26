@@ -12,10 +12,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 <input
                     className={twMerge(`shadow-md ${className}`)}
                     type={type}
+                    name={name}
                     ref={ref}
                     {...props}
                 />
-                <span>{errors}</span>
+                {errors && <span>{errors}</span>}
             </>
         );
     }
