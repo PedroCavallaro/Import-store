@@ -10,21 +10,22 @@ export default function PriceRange({
 }: PriceRangeProps) {
     return (
         <>
-            <div className="flex gap-4">
-                <h2>Produtos</h2>
+            <div className="flex gap-4 px-2 items-center">
+                <h2 className="text-lf font-bold">Produtos</h2>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 rounded-full shadow-lg py-2 px-2">
                     <p>Linha de preço</p>
                     <div className="w-[10rem]">
-                        <span>R$ 0 - {price}</span>
+                        <span className="text-orange-400">R$ 0 - {price}</span>
                     </div>
-                    <Input
-                        className="appearance-none  shadow-none  [&::-webkit-slider-runnable-track]:bg-black/25 [&::-webkit-slider-thumb]:appearance-none  [&::-webkit-slider-thumb]:h-[15px] [&::-webkit-slider-thumb]:w-[1rem] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:scale-125"
-                        type="range"
-                        min={0}
-                        max={3000}
-                        onChange={(e) => handlePriceChange(e)}
-                    />
+                    <div className="relative w-[15rem]">
+                        <Input
+                            max={3000}
+                            type="range"
+                            className="w-48 shadow-none"
+                            onChange={handlePriceChange}
+                        />
+                    </div>
                 </div>
             </div>
         </>

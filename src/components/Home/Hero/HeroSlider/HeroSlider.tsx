@@ -19,7 +19,7 @@ export default function HeroSlider() {
                 loop
                 coverflowEffect={{
                     rotate: 0,
-
+                    modifier: 2,
                     slideShadows: true,
                 }}
                 grabCursor

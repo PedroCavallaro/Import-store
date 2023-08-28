@@ -6,7 +6,9 @@ export default function Home() {
     return (
         <main className="flex flex-col gap-5">
             <Hero />
-            <ProductSection />
+            <section className="px-4 py-4 ml-3">
+                <ProductSection />
+            </section>
         </main>
     );
 }
