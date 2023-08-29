@@ -9,7 +9,7 @@ export default function ProductSection() {
     return (
         <section className="flex flex-col gap-6">
             <PriceRange handlePriceChange={handlePriceChange} price={price} />
-            <div className="flex gap-2">
+            <div className="flex gap-6 w-[90rem] flex-wrap">
                 {products?.map(({ id, name, coverImage, price }, index) => {
                     return (
                         <ProductCard

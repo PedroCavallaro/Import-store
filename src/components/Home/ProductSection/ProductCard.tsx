@@ -1,8 +1,9 @@
 import { Product } from "@/@types/types";
 import Button from "@/components/Button";
+import { formatPrice } from "@/services/currency";
 import Image from "next/image";
 import Link from "next/link";
-import { BsCartPlus } from "react-icons/bs";
+import { FaCartPlus } from "react-icons/fa";
 
 export default function ProductCard({
     id,
@@ -12,10 +13,7 @@ export default function ProductCard({
 }: Pick<Product, "id" | "name" | "coverImage" | "price">) {
     return (
         <>
-            <Link
-                href={"/"}
-                className="gap-2 border-2 flex flex-col border-black px-2 py-2 rounded-lg"
-            >
+            <div className="gap-2  flex flex-col shadow-lg px-2 py-2 rounded-lg">
                 <Image
                     src={coverImage}
                     alt={name}
@@ -25,13 +23,20 @@ export default function ProductCard({
                 />
                 <div>
                     <p>{name}</p>
-                    <p>{price}</p>
+                    <p className="text-orange-400 font-bold">
+                        {formatPrice(price)}
+                    </p>
                 </div>
-                <Button className="bg-orange-400 rounded-lg h-[2rem] flex gap-2 items-center justify-center">
-                    <BsCartPlus />
-                    <span>Adicionar ao Carrinho</span>
-                </Button>
-            </Link>
+                <div className="flex items-center justify-center">
+                    <Link
+                        href={"/"}
+                        className="bg-orange-400 w-[80%] rounded-full h-[2.5rem] flex gap-2 items-center px-2 justify-center text-white text-sm"
+                    >
+                        <FaCartPlus />
+                        <span>Adicionar ao Carrinho</span>
+                    </Link>
+                </div>
+            </div>
         </>
     );
 }
