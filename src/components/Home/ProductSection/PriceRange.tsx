@@ -10,9 +10,8 @@ export default function PriceRange({
 }: PriceRangeProps) {
     return (
         <>
-            <div className="flex gap-4 px-2 items-center">
-                <h2 className="text-lf font-bold">Produtos</h2>
-
+            <div className="flex gap-7 px-2 items-center">
+                <h2 className="text-2xl font-bold">Produtos</h2>
                 <div className="flex gap-2 rounded-full shadow-lg py-2 px-2">
                     <p>Linha de preço</p>
                     <div className="w-[10rem]">

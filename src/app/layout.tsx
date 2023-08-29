@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { ReactNode } from "react";
+import Providers from "@/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const monsterrat = Montserrat({
@@ -18,8 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="pt-br">
             <body className={inter.className}>
-                <Header />
-                {children}
+                <Providers>
+                    <Header />
+                    {children}
+                </Providers>
             </body>
         </html>
     );
