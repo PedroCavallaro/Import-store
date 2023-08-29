@@ -19,9 +19,10 @@ export default function PriceRange({
                     </div>
                     <div className="relative w-[15rem]">
                         <Input
-                            max={3000}
+                            max={4000}
                             type="range"
                             className="w-48 shadow-none"
+                            defaultValue={4000}
                             onChange={handlePriceChange}
                         />
                     </div>

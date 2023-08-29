@@ -5,7 +5,7 @@ import { useProducts } from "./useProducts";
 
 export function usePriceRange() {
     const { products } = useProducts();
-    const [price, setPrice] = useState<number>(1000);
+    const [price, setPrice] = useState<number>(4000);
 
     const handlePriceChange = (e: ChangeEvent<HTMLInputElement>) => {
         setPrice(Number(e.currentTarget.value));

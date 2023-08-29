@@ -5,3 +5,8 @@ export type Product = {
     coverImage: string;
     pictures: Array<string>;
 };
+
+export type Category = {
+    id: string;
+    description: string;
+};
