@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { ReactNode } from "react";
-import Providers from "@/Provider";
+import Providers from "@/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const monsterrat = Montserrat({
