@@ -13,7 +13,7 @@ export default function ProductCard({
 }: Pick<Product, "id" | "name" | "coverImage" | "price">) {
     return (
         <>
-            <div className="gap-2  flex flex-col shadow-lg px-2 py-2 rounded-lg">
+            <div className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg">
                 <Image
                     src={coverImage}
                     alt={name}

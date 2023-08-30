@@ -3,7 +3,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectCoverflow } from "swiper/modules";
+import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import "./HeroSlider.css";
@@ -12,7 +12,14 @@ export default function HeroSlider() {
     return (
         <>
             <Swiper
-                modules={[EffectCoverflow, Pagination]}
+                autoplay={{
+                    delay: 4000,
+                    pauseOnMouseEnter: false,
+                    disableOnInteraction: false,
+                    stopOnLastSlide: false,
+                    reverseDirection: true,
+                }}
+                modules={[EffectCoverflow, Pagination, Autoplay]}
                 centeredSlides
                 effect="coverflow"
                 slidesPerView={2}

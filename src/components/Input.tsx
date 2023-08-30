@@ -10,7 +10,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         return (
             <>
                 <input
-                    className={twMerge(`shadow-md ${className}`)}
+                    className={twMerge(`shadow-md outline-none ${className}`)}
                     type={type}
                     name={name}
                     ref={ref}
