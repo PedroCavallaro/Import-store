@@ -5,12 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCartPlus } from "react-icons/fa";
 
+const setDiscount = (amount: number) => {};
+
 export default function ProductCard({
     id,
     name,
     price,
     coverImage,
-}: Pick<Product, "id" | "name" | "coverImage" | "price">) {
+}: Pick<Product, "id" | "name" | "coverImage" | "price" | "dicountActive">) {
     return (
         <>
             <div className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg">
