@@ -4,7 +4,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 export default function EmailForm() {
     return (
-        <form className="flex shadow-md justify-center items-center gap-3  h-12">
+        <form className="flex shadow-md justify-between items-center gap-3 w-[25rem] h-12">
             <MdOutlineMailOutline
                 size={30}
                 color={"#B5AFAF"}

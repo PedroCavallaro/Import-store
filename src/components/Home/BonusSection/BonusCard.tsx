@@ -8,10 +8,10 @@ interface BonusCardProps {
 export default function BonusCard({ icon, text, title }: BonusCardProps) {
     return (
         <>
-            <div className="flex flex-col justify-start px-2">
+            <div className="flex flex-col gap-2 justify-start px-2 shadow-lg rounded-2xl py-2 w-[17rem] h-[10rem]">
                 {icon}
-                <h2>{title}</h2>
-                <p>{text}</p>
+                <h2 className="text-lg font-bold">{title}</h2>
+                <p className="text-sm">{text}</p>
             </div>
         </>
     );

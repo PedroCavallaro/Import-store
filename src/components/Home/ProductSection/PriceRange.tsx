@@ -12,7 +12,7 @@ export default function PriceRange({
         <>
             <div className="flex gap-7 px-2 items-center">
                 <h2 className="text-2xl font-bold">Produtos</h2>
-                <div className="flex gap-2 rounded-full shadow-lg py-2 px-2">
+                <div className="flex gap-2 rounded-full shadow-md py-2 px-2">
                     <p>Linha de preço</p>
                     <div className="w-[10rem]">
                         <span className="text-orange-400">R$ 0 - {price}</span>
