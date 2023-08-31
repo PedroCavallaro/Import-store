@@ -4,12 +4,7 @@ export type Product = {
     price: number;
     coverImage: string;
     pictures: Array<string>;
-    dicountActive?: boolean;
-};
-
-export type Category = {
-    id: string;
-    description: string;
+    Category?: Category;
 };
 export type ProductWithDiscount = {
     id: string;
@@ -17,4 +12,8 @@ export type ProductWithDiscount = {
     amount: number;
     productId: string;
     Product: Product;
+};
+export type Category = {
+    id: string;
+    description: string;
 };

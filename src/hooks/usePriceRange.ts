@@ -1,4 +1,3 @@
-import { Product } from "@/@types/types";
 import { formatPrice } from "@/services/currency";
 import { ChangeEvent, useState } from "react";
 import { useProducts } from "./useProducts";
@@ -11,7 +10,7 @@ export function usePriceRange() {
         setPrice(Number(e.currentTarget.value));
     };
 
-    const filteredProducts = products?.filter((e) => e.price < price);
+    const filteredProducts = products?.filter((e) => e.price <= price);
     return {
         price: formatPrice(price),
         products: filteredProducts,

@@ -17,7 +17,7 @@ export default function HeroSlider() {
                     pauseOnMouseEnter: false,
                     disableOnInteraction: false,
                     stopOnLastSlide: false,
-                    reverseDirection: true,
+                    reverseDirection: true, 
                 }}
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 centeredSlides

@@ -4,3 +4,7 @@ export function formatPrice(val: number) {
         style: "currency",
     }).format(Number(val));
 }
+export const setDiscount = (val: number, amount: number) => {
+    const updatedValue = val - val * (amount / 100);
+    return formatPrice(updatedValue);
+};

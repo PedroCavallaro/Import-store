@@ -1,22 +1,30 @@
-import { Product } from "@/@types/types";
-import Button from "@/components/Button";
-import { formatPrice } from "@/services/currency";
+import { formatPrice, setDiscount } from "@/services/currency";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCartPlus } from "react-icons/fa";
 
-const setDiscount = (amount: number) => {};
+interface ProductCardProps {
+    id: string;
+    name: string;
+    price: number;
+    coverImage: string;
+    isDiscountActive?: boolean;
+    amount?: number;
+}
 
 export default function ProductCard({
     id,
     name,
     price,
     coverImage,
-}: Pick<Product, "id" | "name" | "coverImage" | "price" | "dicountActive">) {
+    isDiscountActive,
+    amount,
+}: ProductCardProps) {
     return (
         <>
             <div className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg">
                 <Image
+                    draggable={false}
                     src={coverImage}
                     alt={name}
                     className="w-[15rem] object-cover"
@@ -25,9 +33,18 @@ export default function ProductCard({
                 />
                 <div>
                     <p>{name}</p>
-                    <p className="text-orange-400 font-bold">
-                        {formatPrice(price)}
-                    </p>
+                    <h2 className="text-orange-400 font-bold">
+                        {isDiscountActive ? (
+                            <>
+                                <s className="text-sm text-gray-400">
+                                    De: {formatPrice(price)}
+                                </s>
+                                <p>Por: {setDiscount(price, amount!)}</p>
+                            </>
+                        ) : (
+                            formatPrice(price)
+                        )}
+                    </h2>
                 </div>
                 <div className="flex items-center justify-center">
                     <Link
