@@ -1,12 +1,14 @@
-import Faq from "./Faq";
+import FooterLinks from "./FooterLinks";
 import Location from "./Location";
 
 export default function Footer() {
     return (
-        <section className="h-[15rem] bg-[#EAEAEA] flex items-center justify-between px-2">
+        <section className="h-[12rem] bg-[#EAEAEA] flex items-center justify-between px-2 ">
             <Location />
-            <div>
-                <Faq />
+            <div className="flex mr-2 gap-10">
+                <FooterLinks heading="Produtos" type="Products" />
+                <FooterLinks heading="Sobre" type="Products" />
+                <FooterLinks heading="Suporte" type="Products" />
                 <div></div>
             </div>
         </section>

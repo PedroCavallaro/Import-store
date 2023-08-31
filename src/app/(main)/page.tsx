@@ -4,6 +4,7 @@ import NewsLetter from "@/components/Home/Newsletter/NewsLetter";
 import DiscountSection from "@/components/Home/DiscountSection";
 import BonusSection from "@/components/Home/BonusSection/BonusSection";
 import Footer from "@/components/Home/Footer/Footer";
+import DiscountBanner from "@/components/Home/DiscountBanner";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero />
             <ProductSection />
             <BonusSection />
+            <DiscountBanner />
             <DiscountSection />
             <NewsLetter />
             <Footer />

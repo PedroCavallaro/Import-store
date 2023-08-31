@@ -1,4 +1,4 @@
-export const faqLinks = [
+const supportLinks = [
     {
         title: "FAQ",
         href: "/faq",
@@ -12,3 +12,8 @@ export const faqLinks = [
         href: "/faq",
     },
 ];
+export const footerLinks = {
+    Products: supportLinks,
+    Support: supportLinks,
+    About: supportLinks,
+};
