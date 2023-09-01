@@ -30,6 +30,7 @@ export default function ProductCard({
                     className="w-[15rem] object-cover"
                     width={300}
                     height={300}
+                    loading="lazy"
                 />
                 <div>
                     <p>{name}</p>

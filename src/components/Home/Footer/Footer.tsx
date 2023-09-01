@@ -3,7 +3,7 @@ import Location from "./Location";
 
 export default function Footer() {
     return (
-        <section className="h-[12rem] bg-[#EAEAEA] flex items-center justify-between px-2 ">
+        <section className="h-[12rem] bg-[#EAEAEA] flex items-center justify-between px-2">
             <Location />
             <div className="flex mr-2 gap-10">
                 <FooterLinks heading="Produtos" type="Products" />

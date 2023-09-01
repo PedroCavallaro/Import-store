@@ -9,6 +9,7 @@ export default function Categories() {
             {categories?.map(({ description, id }, index) => {
                 return (
                     <CategoryCard
+                        index={index}
                         description={description}
                         id={id}
                         key={index.toString()}

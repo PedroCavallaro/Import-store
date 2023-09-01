@@ -1,20 +1,32 @@
 import Hero from "@/components/Home/Hero/Hero";
-import ProductSection from "@/components/Home/ProductSection/ProductSection";
 import NewsLetter from "@/components/Home/Newsletter/NewsLetter";
-import DiscountSection from "@/components/Home/DiscountSection";
 import BonusSection from "@/components/Home/BonusSection/BonusSection";
 import Footer from "@/components/Home/Footer/Footer";
-import DiscountBanner from "@/components/Home/DiscountBanner";
+import dynamic from "next/dynamic";
+import ProductSection from "@/components/Home/ProductSection/ProductSection";
+import { Suspense } from "react";
 
+const DiscountSection = dynamic(
+    () => import("@/components/Home/DiscountSection"),
+    {
+        ssr: false,
+        loading: () => <div>OI</div>,
+    }
+);
+const DiscountBanner = dynamic(
+    () => import("@/components/Home/DiscountBanner")
+);
 export default function Home() {
     return (
         <main className="flex flex-col gap-8">
             <Hero />
             <ProductSection />
-            <BonusSection />
-            <DiscountBanner />
-            <DiscountSection />
-            <NewsLetter />
+            <Suspense fallback={<div>Carregando</div>}>
+                <BonusSection />
+                <DiscountBanner />
+                <DiscountSection />
+                <NewsLetter />
+            </Suspense>
             <Footer />
         </main>
     );

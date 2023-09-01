@@ -1,5 +1,5 @@
 import { FooterLink } from "@/@types/types";
-import { footerLinks } from "@/app/constants/constants";
+import { footerLinks } from "@/constants/constants";
 import Link from "next/link";
 
 interface FooterLinksProps {

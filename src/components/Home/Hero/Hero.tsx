@@ -1,5 +1,10 @@
 import Categories from "./Categories";
-import HeroSlider from "./HeroSlider/HeroSlider";
+import dynamic from "next/dynamic";
+
+const HeroSlider = dynamic(() => import("./HeroSlider/HeroSlider"), {
+    ssr: false,
+    loading: () => <p>Carregando</p>,
+});
 
 export default function Hero() {
     return (

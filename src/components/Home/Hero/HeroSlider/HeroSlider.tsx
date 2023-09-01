@@ -17,10 +17,11 @@ export default function HeroSlider() {
                     pauseOnMouseEnter: false,
                     disableOnInteraction: false,
                     stopOnLastSlide: false,
-                    reverseDirection: true, 
+                    reverseDirection: true,
                 }}
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 centeredSlides
+                lazyPreloadPrevNext={2}
                 effect="coverflow"
                 slidesPerView={2}
                 loop
@@ -42,17 +43,19 @@ export default function HeroSlider() {
                     <Image
                         src={"/blue.png"}
                         alt="a"
-                        width={200}
-                        height={200}
+                        width={100}
+                        height={100}
+                        loading="lazy"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        src={"/yellow.png"}
+                        src={"/heli1.jpg"}
                         alt="a"
-                        width={200}
-                        height={200}
+                        width={100}
+                        height={100}
+                        loading="lazy"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg   "
                     />
                 </SwiperSlide>
@@ -60,8 +63,9 @@ export default function HeroSlider() {
                     <Image
                         src={"/orange.png"}
                         alt="a"
-                        width={200}
-                        height={200}
+                        width={100}
+                        height={100}
+                        loading="lazy"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>
@@ -69,8 +73,9 @@ export default function HeroSlider() {
                     <Image
                         src={"/blue.png"}
                         alt="a"
-                        width={200}
-                        height={200}
+                        width={100}
+                        height={100}
+                        loading="lazy"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>
