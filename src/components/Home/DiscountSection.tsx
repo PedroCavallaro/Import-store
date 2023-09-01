@@ -6,7 +6,7 @@ import ProductCard from "./ProductSection/ProductCard";
 const DiscountSection = () => {
     const { discounts } = useDiscount();
     return (
-        <section className="">
+        <section className="px-4 py-4 ml-3">
             <h2 className="text-2xl font-bold">Com desconto</h2>
             <div className=" flex gap-2">
                 {discounts?.map(({ Product, isActive, amount }, index) => {
