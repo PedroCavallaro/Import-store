@@ -22,6 +22,7 @@ export default function DiscountBanner() {
                     alt="a"
                     width={1000}
                     height={1000}
+                    decoding="async"
                     loading="lazy"
                     className="h-full object-cover w-full pl-[10rem] ml-2"
                 />

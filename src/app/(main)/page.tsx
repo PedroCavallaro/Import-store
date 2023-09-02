@@ -4,7 +4,6 @@ import BonusSection from "@/components/Home/BonusSection/BonusSection";
 import Footer from "@/components/Home/Footer/Footer";
 import dynamic from "next/dynamic";
 import ProductSection from "@/components/Home/ProductSection/ProductSection";
-import { Suspense } from "react";
 
 const DiscountSection = dynamic(
     () => import("@/components/Home/DiscountSection"),
@@ -21,12 +20,12 @@ export default function Home() {
         <main className="flex flex-col gap-8">
             <Hero />
             <ProductSection />
-            <Suspense fallback={<div>Carregando</div>}>
-                <BonusSection />
-                <DiscountBanner />
-                <DiscountSection />
-                <NewsLetter />
-            </Suspense>
+
+            <BonusSection />
+            <DiscountBanner />
+            <DiscountSection />
+            <NewsLetter />
+
             <Footer />
         </main>
     );

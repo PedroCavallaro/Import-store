@@ -12,7 +12,7 @@ export default function Categories() {
                         index={index}
                         description={description}
                         id={id}
-                        key={index.toString()}
+                        key={id}
                     />
                 );
             })}

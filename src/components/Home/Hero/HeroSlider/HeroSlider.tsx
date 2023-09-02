@@ -7,8 +7,9 @@ import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import "./HeroSlider.css";
+import { memo } from "react";
 
-export default function HeroSlider() {
+export const HeroSlider = () => {
     return (
         <>
             <Swiper
@@ -82,4 +83,5 @@ export default function HeroSlider() {
             </Swiper>
         </>
     );
-}
+};
+export default memo(HeroSlider);

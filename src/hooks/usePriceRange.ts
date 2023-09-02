@@ -1,5 +1,5 @@
 import { formatPrice } from "@/services/currency";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import { useProducts } from "./useProducts";
 
 export function usePriceRange() {
@@ -10,7 +10,14 @@ export function usePriceRange() {
         setPrice(Number(e.currentTarget.value));
     };
 
-    const filteredProducts = products?.filter((e) => e.price <= price);
+    const filteredProducts = useMemo(
+        () => {
+            return products?.filter((e) => e.price <= price);
+        },
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [products]
+    );
     return {
         price: formatPrice(price),
         products: filteredProducts,
