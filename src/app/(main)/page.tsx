@@ -1,7 +1,7 @@
 import Hero from "@/components/Home/Hero/Hero";
 import NewsLetter from "@/components/Home/Newsletter/NewsLetter";
 import BonusSection from "@/components/Home/BonusSection/BonusSection";
-import Footer from "@/components/Home/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 import dynamic from "next/dynamic";
 import ProductSection from "@/components/Home/ProductSection/ProductSection";
 
@@ -25,7 +25,6 @@ export default function Home() {
             <DiscountBanner />
             <DiscountSection />
             <NewsLetter />
-
             <Footer />
         </main>
     );

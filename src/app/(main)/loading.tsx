@@ -1,3 +1,3 @@
 export default function Loading() {
-    return <p>OI</p>;
+    return <p>Carregando pai</p>;
 }

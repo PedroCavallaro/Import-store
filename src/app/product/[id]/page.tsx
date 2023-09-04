@@ -1,5 +1,5 @@
 import { Product } from "@/@types/types";
-import ProductCard from "@/components/Home/ProductSection/ProductCard";
+import Hero from "@/components/Product/Hero";
 import { api } from "@/lib/api";
 import { AxiosResponse } from "axios";
 
@@ -9,17 +9,19 @@ async function getServerSideProps(id: string) {
 }
 
 export default async function Product({ params }: { params: { id: string } }) {
-    const { coverImage, id, name, pictures, price } = await getServerSideProps(
-        params.id
-    );
+    const { coverImage, id, name, pictures, price, Category } =
+        await getServerSideProps(params.id);
+
+    console.log(Category);
     return (
         <main>
-            <ProductCard
+            <Hero
                 coverImage={coverImage}
                 id={id}
                 name={name}
+                pictures={pictures}
                 price={price}
-                key={id}
+                Category={Category}
             />
         </main>
     );
