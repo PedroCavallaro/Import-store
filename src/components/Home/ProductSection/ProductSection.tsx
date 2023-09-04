@@ -6,7 +6,6 @@ import NoItens from "./NoItens";
 
 export default function ProductSection() {
     const { products, handlePriceChange, price } = usePriceRange();
-    console.log("render");
     return (
         <section className="px-4 py-4 ml-3">
             <div className="flex flex-col gap-6">

@@ -17,4 +17,4 @@ export type Category = {
     id: string;
     description: string;
 };
-export type FooterLink = "FAQ" | "Support" | "About";
+export type FooterLink = "Products" | "Support" | "About";

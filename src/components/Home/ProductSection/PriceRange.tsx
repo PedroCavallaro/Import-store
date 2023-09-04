@@ -21,7 +21,7 @@ export default function PriceRange({
                         <Input
                             max={4000}
                             type="range"
-                            className="w-48 shadow-none"
+                            className="w-48 shadow-none accent-orange-500  outline-none"
                             defaultValue={4000}
                             onChange={handlePriceChange}
                         />

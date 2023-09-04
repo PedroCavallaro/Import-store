@@ -22,7 +22,10 @@ export default function ProductCard({
 }: ProductCardProps) {
     return (
         <>
-            <div className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg">
+            <Link
+                href={`product/${id}`}
+                className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg hover:bg-gray-100 transition-all"
+            >
                 <Image
                     draggable={false}
                     src={coverImage}
@@ -50,14 +53,14 @@ export default function ProductCard({
                 </div>
                 <div className="flex items-center justify-center">
                     <Link
-                        href={"/"}
-                        className="bg-orange-400 w-[80%] rounded-full h-[2.5rem] flex gap-2 items-center px-2 justify-center text-white text-sm"
+                        href={`/`}
+                        className="bg-orange-400 hover:bg-orange-500 w-[80%] rounded-full h-[2.5rem] flex gap-2 items-center px-2 justify-center text-white text-sm transition-all"
                     >
                         <FaCartPlus />
                         <span>Adicionar ao Carrinho</span>
                     </Link>
                 </div>
-            </div>
+            </Link>
         </>
     );
 }
