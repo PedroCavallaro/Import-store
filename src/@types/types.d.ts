@@ -4,6 +4,7 @@ export type Product = {
     price: number;
     coverImage: string;
     pictures: Array<string>;
+    categoryId?: string;
     Category?: Category;
 };
 export type ProductWithDiscount = {
