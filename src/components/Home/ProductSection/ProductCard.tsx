@@ -24,7 +24,7 @@ export default function ProductCard({
         <>
             <Link
                 href={`product/${id}`}
-                className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg hover:bg-gray-100 transition-all"
+                className="gap-2  flex flex-col shadow-md px-2 py-2 rounded-lg w-[16.5rem] hover:bg-gray-100 transition-all"
             >
                 <Image
                     draggable={false}
@@ -34,7 +34,7 @@ export default function ProductCard({
                     width={300}
                     height={300}
                     decoding="async"
-                    loading="lazy"
+                    loading="eager"
                 />
                 <div>
                     <p>{name}</p>
