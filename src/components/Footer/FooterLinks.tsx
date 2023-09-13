@@ -10,7 +10,7 @@ interface FooterLinksProps {
 export default function FooterLinks({ heading, type }: FooterLinksProps) {
     return (
         <div className="flex flex-col gap-2">
-            <h3>{heading}</h3>
+            <p>{heading}</p>
             <ul>
                 {footerLinks[type].map(({ href, title }, index) => {
                     return (
