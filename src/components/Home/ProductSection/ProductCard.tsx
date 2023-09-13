@@ -33,7 +33,6 @@ export default function ProductCard({
                     className="w-[15rem] object-cover"
                     width={300}
                     height={300}
-                    decoding="async"
                     loading="eager"
                 />
                 <div>
@@ -52,13 +51,10 @@ export default function ProductCard({
                     </h2>
                 </div>
                 <div className="flex items-center justify-center">
-                    <Link
-                        href={`/`}
-                        className="bg-orange-400 hover:bg-orange-500 w-[80%] rounded-full h-[2.5rem] flex gap-2 items-center px-2 justify-center text-white text-sm transition-all"
-                    >
+                    <button className="bg-orange-400 hover:bg-orange-500 w-[80%] rounded-full h-[2.5rem] flex gap-2 items-center px-2 justify-center text-white text-sm transition-all">
                         <FaCartPlus />
                         <span>Adicionar ao Carrinho</span>
-                    </Link>
+                    </button>
                 </div>
             </Link>
         </>

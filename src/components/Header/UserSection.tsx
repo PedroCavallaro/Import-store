@@ -11,14 +11,21 @@ export default function UserSection() {
                     </Button>
                 </li>
                 <li>
-                    <button className="hover:text-red-600 transition-all">
+                    <Button
+                        aria-label="itens salvos"
+                        name="heart"
+                        className="hover:text-red-600 transition-all"
+                    >
                         <AiOutlineHeart size={30} />
-                    </button>
+                    </Button>
                 </li>
                 <li>
-                    <button className="hover:text-orange-500 transition-all">
+                    <Button
+                        aria-label="carrinho"
+                        className="hover:text-orange-500 transition-all"
+                    >
                         <BiCart size={30} />
-                    </button>
+                    </Button>
                 </li>
             </ul>
         </nav>

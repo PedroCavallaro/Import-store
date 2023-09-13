@@ -13,7 +13,6 @@ async function getServerSideProps(id: string) {
 export default async function Product({ params }: { params: { id: string } }) {
     const { coverImage, id, name, pictures, price, Category, categoryId } =
         await getServerSideProps(params.id);
-    console.log(id);
     return (
         <main>
             <Hero
@@ -25,7 +24,7 @@ export default async function Product({ params }: { params: { id: string } }) {
                 Category={Category}
             />
             <Suspense fallback={<div>Carregando...</div>}>
-                <RelatedProducts Category={Category!.description} />
+                <RelatedProducts categoryId={categoryId!} />
             </Suspense>
         </main>
     );

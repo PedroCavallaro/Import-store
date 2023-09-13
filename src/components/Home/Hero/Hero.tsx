@@ -2,7 +2,7 @@ import Categories from "./Categories";
 import dynamic from "next/dynamic";
 
 const HeroSlider = dynamic(() => import("./HeroSlider/HeroSlider"), {
-    ssr: false,
+    ssr: true,
     loading: () => <p>Carregando</p>,
 });
 

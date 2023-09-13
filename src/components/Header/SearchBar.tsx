@@ -1,3 +1,4 @@
+import Button from "../Button";
 import Input from "../Input";
 import { BsSearch } from "react-icons/bs";
 export default function SearchBar() {
@@ -7,9 +8,9 @@ export default function SearchBar() {
                 htmlFor=""
                 className="flex rounded-full shadow-md items-center gap-2 px-2 "
             >
-                <button>
+                <Button aria-label="cart">
                     <BsSearch />
-                </button>
+                </Button>
                 <Input
                     className="shadow-none py-2 outline-none w-[28rem]"
                     placeholder="Pesquisar produtos"

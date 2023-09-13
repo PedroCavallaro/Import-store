@@ -13,7 +13,9 @@ export default function PriceRange({
             <div className="flex gap-7 px-2 items-center">
                 <h2 className="text-2xl font-bold">Produtos</h2>
                 <div className="flex gap-2 rounded-full shadow-md py-2 px-2">
-                    <p>Linha de preço</p>
+                    <label id="price-range-label" htmlFor="rangeInput">
+                        Linha de preço
+                    </label>
                     <div className="w-[10rem]">
                         <span className="text-orange-400">R$ 0 - {price}</span>
                     </div>
@@ -21,6 +23,8 @@ export default function PriceRange({
                         <Input
                             max={4000}
                             type="range"
+                            aria-labelledby="price-range-label"
+                            id="rangeInput"
                             className="w-48 shadow-none accent-orange-500  outline-none"
                             defaultValue={4000}
                             onChange={handlePriceChange}

@@ -14,8 +14,9 @@ export default function ProductSection() {
                     price={price}
                 />
                 {!products?.length ? (
-                    <NoItens />
+                    <p>oi</p>
                 ) : (
+                    // <NoItens />
                     <div className="flex gap-6 w-[90rem] h-[50rem] flex-wrap">
                         {products?.map(
                             ({ id, name, coverImage, price }, index) => {

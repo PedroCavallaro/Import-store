@@ -20,10 +20,9 @@ export default function DiscountBanner() {
                 <Image
                     src={"/heli1.jpg"}
                     alt="a"
-                    width={1000}
-                    height={1000}
-                    decoding="async"
-                    loading="lazy"
+                    width={900}
+                    height={900}
+                    loading="eager"
                     className="h-full object-cover w-full pl-[10rem] ml-2"
                 />
             </div>

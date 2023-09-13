@@ -13,7 +13,12 @@ const Button = ({
 }: ButtonProps) => {
     return (
         <>
-            <button type={type} className={twMerge(`${className}`)} {...props}>
+            <button
+                role="button"
+                type={type}
+                className={twMerge(`${className}`)}
+                {...props}
+            >
                 {children}
             </button>
         </>
