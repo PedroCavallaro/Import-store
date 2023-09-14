@@ -10,7 +10,7 @@ export default function UserSection() {
                         <span>Login</span>
                     </Button>
                 </li>
-                <li>
+                <li className="flex flex-col items-center gap-1">
                     <Button
                         aria-label="itens salvos"
                         name="heart"
@@ -18,14 +18,16 @@ export default function UserSection() {
                     >
                         <AiOutlineHeart size={30} />
                     </Button>
+                    <p className="text-xs">Itens salvos</p>
                 </li>
-                <li>
+                <li className="flex flex-col items-center gap-1">
                     <Button
                         aria-label="carrinho"
                         className="hover:text-orange-500 transition-all"
                     >
                         <BiCart size={30} />
                     </Button>
+                    <p className="text-xs">Carrinho</p>
                 </li>
             </ul>
         </nav>

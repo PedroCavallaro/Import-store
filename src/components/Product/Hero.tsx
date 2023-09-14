@@ -9,6 +9,7 @@ export default function Hero({
     pictures,
     price,
     Category,
+    description = "",
 }: Product) {
     return (
         <section className="flex gap-16 mt-5  px-4">

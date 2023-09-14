@@ -46,7 +46,7 @@ export const HeroSlider = () => {
                         alt="a"
                         width={100}
                         height={100}
-                        loading="lazy"
+                        loading="eager"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>
@@ -56,7 +56,7 @@ export const HeroSlider = () => {
                         alt="a"
                         width={100}
                         height={100}
-                        loading="lazy"
+                        loading="eager"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg   "
                     />
                 </SwiperSlide>
@@ -66,7 +66,7 @@ export const HeroSlider = () => {
                         alt="a"
                         width={100}
                         height={100}
-                        loading="lazy"
+                        loading="eager"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>
@@ -76,7 +76,7 @@ export const HeroSlider = () => {
                         alt="a"
                         width={100}
                         height={100}
-                        loading="lazy"
+                        loading="eager"
                         className="w-[40rem] object-cover h-[29rem] rounded-lg  "
                     />
                 </SwiperSlide>

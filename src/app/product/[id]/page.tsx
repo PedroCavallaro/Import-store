@@ -5,6 +5,7 @@ import { AxiosResponse } from "axios";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer/Footer";
+import Description from "@/components/Product/Description";
 
 const RelatedProducts = dynamic(
     () => import("@/components/Product/RelatedProducts"),
@@ -19,11 +20,20 @@ async function getServerSideProps(id: string) {
 }
 
 export default async function Product({ params }: { params: { id: string } }) {
-    const { coverImage, id, name, pictures, price, Category, categoryId } =
-        await getServerSideProps(params.id);
+    const {
+        coverImage,
+        id,
+        name,
+        pictures,
+        price,
+        Category,
+        categoryId,
+        description,
+    } = await getServerSideProps(params.id);
     return (
-        <main>
+        <main className="flex flex-col gap-6">
             <Hero
+                description=""
                 coverImage={coverImage}
                 id={id}
                 name={name}
@@ -31,6 +41,7 @@ export default async function Product({ params }: { params: { id: string } }) {
                 price={price}
                 Category={Category}
             />
+            <Description description={description} />
             <Suspense fallback={<div>Carregando...</div>}>
                 <RelatedProducts categoryId={categoryId!} />
             </Suspense>

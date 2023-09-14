@@ -31,8 +31,8 @@ export default function ProductCard({
                     src={coverImage}
                     alt={name}
                     className="w-[15rem] object-cover"
-                    width={300}
-                    height={300}
+                    width={240}
+                    height={100}
                     loading="eager"
                 />
                 <div>

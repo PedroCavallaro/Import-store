@@ -21,13 +21,13 @@ export default function HeroInfo({
                 </button>
             </div>
             <h3 className="text-2xl font-bold">Por: {formatPrice(price)}</h3>
-            <div className="flex flex-col gap-3">
-                <Button className="flex items-center justify-center h-[3rem] rounded-md bg-orange-300">
+            <div className="flex flex-col gap-3 ">
+                <Button className="flex items-center justify-center h-[3rem] rounded-md bg-orange-300 hover:bg-orange-500 transition-all">
                     <span className="flex items-center gap-2 text-white">
                         <BiShoppingBag size={30} /> Comprar agora
                     </span>
                 </Button>
-                <Button className="flex items-center justify-center h-[3rem] rounded-md bg-orange-400">
+                <Button className="flex items-center justify-center h-[3rem] rounded-md bg-orange-400 hover:bg-orange-500 transition-all">
                     <span className="flex items-center gap-2 text-white">
                         <BiCart size={30} /> Adicionar ao carrinho
                     </span>
