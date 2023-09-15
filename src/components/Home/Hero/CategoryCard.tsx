@@ -34,7 +34,8 @@ export default function CategoryCard({
                         className="absolute rounded-md -top-4 z-20 w-36 "
                         width={200}
                         height={200}
-                        alt="a"
+                        loading="eager"
+                        alt={description}
                     />
                 </div>
             </div>
