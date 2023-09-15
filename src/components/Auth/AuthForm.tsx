@@ -16,7 +16,11 @@ import { AuthTypeObj } from "@/@types/types";
 
 export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
     const schema = type === "login" ? loginSchema : registerSchema;
-    type FormData = z.infer<typeof schema>;
+
+    type FormData = z.infer<typeof schema> & {
+        type: "register";
+        name: string;
+    };
 
     const {
         handleSubmit,
@@ -32,15 +36,15 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
             onSubmit={handleSubmit((data) => console.log("a"))}
             className="flex flex-col px-2  gap-5 w-[35rem]"
         >
-            <h1 className="text-[30px] font-bold">{type}</h1>
+            <h1 className="text-[30px] font-bold">
+                {authTypesAttributes[type].title}
+            </h1>
             {type !== "login" && (
                 <LabelInput
                     label="Nome"
                     type="text"
-                    //@ts-ignore
                     errors={errors.name?.message}
                     placeholder="Digite seu email"
-                    //@ts-ignore
                     {...register("name")}
                 />
             )}
@@ -63,7 +67,9 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
                     type="submit"
                     className="bg-blue-900 h-[3rem] rounded-md"
                 >
-                    <span className="text-white">Entrar</span>
+                    <span className="text-white">
+                        {authTypesAttributes[type].buttonText}
+                    </span>
                 </Button>
             </div>
             <InternRedirectLink type={type} />
