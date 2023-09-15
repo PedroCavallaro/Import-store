@@ -16,6 +16,11 @@ const config: Config = {
             fontFamily: {
                 mono: "var(--font-mosterrat)",
             },
+            colors: {
+                blue: {
+                    "900": "#003049",
+                },
+            },
         },
     },
     plugins: [],

@@ -17,11 +17,3 @@ export const footerLinks = {
     Support: supportLinks,
     About: supportLinks,
 };
-export const authTypes = {
-    login: {
-        title: "Login",
-        buttonText: "Entrar",
-        authFunction: () => true,
-    },
-    register: {},
-};

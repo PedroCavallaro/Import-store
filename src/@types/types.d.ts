@@ -20,3 +20,14 @@ export type Category = {
     description: string;
 };
 export type FooterLink = "Products" | "Support" | "About";
+
+export type AuthTypeObj = {
+    login: AuthConst;
+    register: AuthConst;
+};
+
+export type AuthConst = {
+    title: string;
+    buttonText: string;
+    authFunction: Function;
+};
