@@ -29,5 +29,4 @@ export type AuthTypeObj = {
 export type AuthConst = {
     title: string;
     buttonText: string;
-    authFunction: Function;
 };
