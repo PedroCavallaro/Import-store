@@ -12,8 +12,8 @@ export default function Auth({
     }
     const { type } = params;
     return (
-        <main className="flex">
-            <section className="flex h-[40rem] w-full">
+        <main className="w-full ">
+            <section className="flex relative h-screen">
                 <div className="w-[70%] flex justify-center mt-[5rem] ">
                     <AuthForm type={type} />
                 </div>

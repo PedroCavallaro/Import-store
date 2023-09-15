@@ -30,3 +30,8 @@ export type AuthConst = {
     title: string;
     buttonText: string;
 };
+export type SignInData = {
+    email: string;
+    password: string;
+};
+export type RegisterUserData = SignInData & { name: string };

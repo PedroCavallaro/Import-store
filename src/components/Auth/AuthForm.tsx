@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import LabelInput from "../LabelInput";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,8 +12,11 @@ import {
     registerSchema,
 } from "@/constants/auth";
 import { AuthTypeObj } from "@/@types/types";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
+    const { loginUser, registerUser } = useAuth();
+
     const schema = type === "login" ? loginSchema : registerSchema;
 
     type FormData = z.infer<typeof schema> & {
@@ -30,10 +32,14 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
         mode: "onBlur",
         resolver: zodResolver(schema),
     });
+
     return (
         <form
-            action=""
-            onSubmit={handleSubmit((data) => console.log("a"))}
+            onSubmit={handleSubmit(({ email, password, name }) =>
+                type === "login"
+                    ? loginUser({ email, password })
+                    : registerUser({ name, email, password })
+            )}
             className="flex flex-col px-2  gap-5 w-[35rem]"
         >
             <h1 className="text-[30px] font-bold">
@@ -44,7 +50,7 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
                     label="Nome"
                     type="text"
                     errors={errors.name?.message}
-                    placeholder="Digite seu email"
+                    placeholder="Digite seu Nome"
                     {...register("name")}
                 />
             )}
