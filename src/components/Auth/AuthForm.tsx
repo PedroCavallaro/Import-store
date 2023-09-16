@@ -13,11 +13,11 @@ import {
 import { AuthTypeObj } from "@/@types/types";
 import { useAuth } from "@/contexts/AuthContext";
 import Link from "next/link";
-import { GoogleLogin } from "@react-oauth/google";
 import { SocialLogin } from "./SocialLogin";
+import { AiOutlineLoading } from "react-icons/ai";
 
 export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
-    const { loginUser, registerUser } = useAuth();
+    const { loginUser, registerUser, isAuthLoading } = useAuth();
 
     const schema = type === "login" ? loginSchema : registerSchema;
 
@@ -83,11 +83,19 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
             <div className="flex flex-col gap-2">
                 <Button
                     type="submit"
-                    className="bg-blue-900 h-[3rem] rounded-md"
+                    className={`${
+                        isAuthLoading ? "bg-emerald-600" : "bg-blue-900"
+                    }  h-[3rem] rounded-md flex items-center justify-center transition-all`}
                 >
-                    <span className="text-white">
-                        {authTypesAttributes[type].buttonText}
-                    </span>
+                    {isAuthLoading ? (
+                        <div className="text-white animate-spin ">
+                            <AiOutlineLoading />
+                        </div>
+                    ) : (
+                        <span className="text-white">
+                            {authTypesAttributes[type].buttonText}
+                        </span>
+                    )}
                 </Button>
             </div>
             <InternRedirectLink type={type} />
