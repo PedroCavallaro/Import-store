@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Button from "../Button";
 import InternRedirectLink from "./InternRedirectLink";
-import GoogleLogin from "./GoogleLogin";
 import {
     authTypesAttributes,
     loginSchema,
@@ -13,6 +12,9 @@ import {
 } from "@/constants/auth";
 import { AuthTypeObj } from "@/@types/types";
 import { useAuth } from "@/contexts/AuthContext";
+import Link from "next/link";
+import { GoogleLogin } from "@react-oauth/google";
+import { SocialLogin } from "./SocialLogin";
 
 export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
     const { loginUser, registerUser } = useAuth();
@@ -61,13 +63,23 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
                 placeholder="Digite seu email"
                 {...register("email")}
             />
-            <LabelInput
-                label="Senha"
-                placeholder="Digite sua senha"
-                type="password"
-                errors={errors.password?.message}
-                {...register("password")}
-            />
+            <div className="flex flex-col">
+                <LabelInput
+                    label="Senha"
+                    placeholder="Digite sua senha"
+                    type="password"
+                    errors={errors.password?.message}
+                    {...register("password")}
+                />
+                {type === "login" && (
+                    <Link
+                        href={"/"}
+                        className="underline text-right mt-1 hover:text-zinc-500 transition-all"
+                    >
+                        Esqueceu sua senha?
+                    </Link>
+                )}
+            </div>
             <div className="flex flex-col gap-2">
                 <Button
                     type="submit"
@@ -79,7 +91,7 @@ export default function AuthForm({ type }: { type: keyof AuthTypeObj }) {
                 </Button>
             </div>
             <InternRedirectLink type={type} />
-            <GoogleLogin />
+            <SocialLogin />
         </form>
     );
 }

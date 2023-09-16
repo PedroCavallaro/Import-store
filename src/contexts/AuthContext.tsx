@@ -11,12 +11,10 @@ const AuthContext = createContext({} as AuthContextValues);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     async function loginUser({ email, password }: SignInData) {
-        await api
-            .post("auth/login", {
-                email,
-                password,
-            })
-            .then((res) => console.log(res));
+        await api.post("auth/login", {
+            email,
+            password,
+        });
     }
 
     async function registerUser({ email, name, password }: RegisterUserData) {
