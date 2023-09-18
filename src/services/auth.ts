@@ -1,14 +1,15 @@
+import { UserRouteRes } from "@/@types/types";
 import { api } from "@/lib/api";
-import { setCookie } from "nookies";
+import { setCookie, parseCookies } from "nookies";
 
 export async function sendGoogleAuthToken(access_token: string) {
     await api
-        .post("/auth/google", {
+        .post<UserRouteRes>("/auth/google", {
             token: access_token,
         })
         .then((res) => {
             const { token } = res.data;
-            console.log(token);
+            setTokenOnCookies(token);
         });
 }
 export function setTokenOnCookies(token: string) {
@@ -16,4 +17,9 @@ export function setTokenOnCookies(token: string) {
         maxAge: 60 * 60 * 24 * 30,
         path: "/",
     });
+}
+export function verifyToken() {
+    const { auth } = parseCookies();
+
+    return auth ? true : false;
 }

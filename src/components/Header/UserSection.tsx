@@ -22,11 +22,13 @@ export default function UserSection() {
                             <p className="text-xs">Minha conta</p>
                         </>
                     ) : (
-                        <Link href={"/auth/login"}>
+                        <div>
                             <Button className="shadow-md rounded-full py-2 px-2 w-[10rem] hover:bg-zinc-100 transition-all ">
-                                <span>Login</span>
+                                <Link href={"/auth/login"}>
+                                    <span>Login</span>
+                                </Link>
                             </Button>
-                        </Link>
+                        </div>
                     )}
                 </li>
                 <li className="flex flex-col items-center gap-1">

@@ -34,4 +34,7 @@ export type SignInData = {
     email: string;
     password: string;
 };
+export type UserRouteRes = {
+    token: string;
+};
 export type RegisterUserData = SignInData & { name: string };
