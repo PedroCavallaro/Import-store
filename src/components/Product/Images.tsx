@@ -11,14 +11,16 @@ interface ProductImages {
 const imageIds = [1, 2, 3];
 export default function Images({ coverImage, pictures }: ProductImages) {
     const { currentImage } = useProductImages(coverImage);
+
     return (
         <>
             <div className=" flex flex-col gap-2">
                 <ProductVideo />
                 <Image
-                    src={currentImage}
+                    src={currentImage.current}
                     alt=""
                     width={400}
+                    key={"main"}
                     height={400}
                     className="w-[40rem] h-[35rem]  shadow-lg"
                 />
@@ -27,6 +29,10 @@ export default function Images({ coverImage, pictures }: ProductImages) {
                         return (
                             <button key={imageIds[index]}>
                                 <Image
+                                    onClick={(e) => {
+                                        e.currentTarget.src =
+                                            currentImage.current;
+                                    }}
                                     src={image}
                                     alt="a"
                                     width={100}

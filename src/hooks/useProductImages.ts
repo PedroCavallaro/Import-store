@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useRef } from "react";
 
 export function useProductImages(coverImage: string) {
-    const [currentImage, setCurrentImage] = useState(coverImage);
-
+    const currentImage = useRef(coverImage);
     return {
         currentImage,
     };
