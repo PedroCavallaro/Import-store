@@ -10,7 +10,7 @@ export default function UserSection() {
         <nav>
             <ul className="flex gap-5 items-center ">
                 <li className="flex flex-col items-center gap-1">
-                    {isAuth ? (
+                    {/* {isAuth ? (
                         <>
                             <Button
                                 aria-label="itens salvos"
@@ -29,7 +29,7 @@ export default function UserSection() {
                                 </Link>
                             </Button>
                         </div>
-                    )}
+                    )} */}
                 </li>
                 <li className="flex flex-col items-center gap-1">
                     <Button

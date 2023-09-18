@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer/Footer";
 import Description from "@/components/Product/Description";
+import VideoModal from "@/components/Product/VideoModal";
 
 const RelatedProducts = dynamic(
     () => import("@/components/Product/RelatedProducts"),
@@ -32,6 +33,7 @@ export default async function Product({ params }: { params: { id: string } }) {
     } = await getServerSideProps(params.id);
     return (
         <main className="flex flex-col gap-6">
+            <VideoModal videoPath="asd" />
             <Hero
                 description=""
                 coverImage={coverImage}

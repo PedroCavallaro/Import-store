@@ -2,6 +2,7 @@
 import { useProductImages } from "@/hooks/useProductImages";
 import Image from "next/image";
 import ProductVideo from "./ProductVideo";
+import VideoModal from "./VideoModal";
 
 interface ProductImages {
     coverImage: string;
@@ -12,9 +13,8 @@ export default function Images({ coverImage, pictures }: ProductImages) {
     const { currentImage } = useProductImages(coverImage);
     return (
         <>
-            <div className="relative flex flex-col gap-2">
+            <div className=" flex flex-col gap-2">
                 <ProductVideo />
-
                 <Image
                     src={currentImage}
                     alt=""

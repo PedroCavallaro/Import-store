@@ -21,7 +21,7 @@ export default async function RelatedProducts({
             <h2 className="text-2xl font-bold">Produtos Relacionados</h2>
             <div className="w-[90rem] overflow-x-scroll h-[26rem]">
                 <div className="relative flex w-full ">
-                    <div className="absolute flex  z-50">
+                    <div className="absolute flex  z-10">
                         {relatedProducts.map(
                             ({ coverImage, id, name, price }, index) => {
                                 return (
