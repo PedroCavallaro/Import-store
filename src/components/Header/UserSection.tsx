@@ -10,7 +10,7 @@ export default function UserSection() {
         <nav>
             <ul className="flex gap-5 items-center ">
                 <li className="flex flex-col items-center gap-1">
-                    {/* {isAuth ? (
+                    {isAuth ? (
                         <>
                             <Button
                                 aria-label="itens salvos"
@@ -24,12 +24,15 @@ export default function UserSection() {
                     ) : (
                         <div>
                             <Button className="shadow-md rounded-full py-2 px-2 w-[10rem] hover:bg-zinc-100 transition-all ">
-                                <Link href={"/auth/login"}>
+                                <Link
+                                    href={"/auth/login"}
+                                    className="w-full h-full"
+                                >
                                     <span>Login</span>
                                 </Link>
                             </Button>
                         </div>
-                    )} */}
+                    )}
                 </li>
                 <li className="flex flex-col items-center gap-1">
                     <Button

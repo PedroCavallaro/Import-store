@@ -1,7 +1,6 @@
 "use client";
 import { useProductMedia } from "@/contexts/MediaContext";
 import Button from "../Button";
-import VideoModal from "./VideoModal";
 
 export default function ProductVideo() {
     const { isModalOpen, handleMediaModal } = useProductMedia();
@@ -12,7 +11,11 @@ export default function ProductVideo() {
                     <div className="w-[6rem] h-[6rem] bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
                         <Button onClick={() => handleMediaModal()}>
                             <video autoPlay muted loop>
-                                <source src="/VIDEO 10s.mp4" type="video/mp4" />
+                                <source
+                                    src="/VIDEO 10s.mp4"
+                                    type="video/mp4"
+                                    className="w-[15rem] h-[15rem]"
+                                />
                             </video>
                         </Button>
                     </div>

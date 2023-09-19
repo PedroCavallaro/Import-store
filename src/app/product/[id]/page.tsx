@@ -8,7 +8,6 @@ import Footer from "@/components/Footer/Footer";
 import Description from "@/components/Product/Description";
 import VideoModal from "@/components/Product/VideoModal";
 import MediaModal from "@/components/MediaModal";
-import ImagesModal from "@/components/Product/ImagesModal";
 
 const RelatedProducts = dynamic(
     () => import("@/components/Product/RelatedProducts"),
