@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 export default function MediaModal({ children }: { children: ReactNode }) {
-    const { isModalOpen, handleMediaModal } = useProductMedia();
+    const { isModalOpen, handleMediaModal, mediaState } = useProductMedia();
 
     return (
         <>

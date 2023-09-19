@@ -10,6 +10,7 @@ import {
 interface MediaContext {
     isModalOpen: boolean;
     handleMediaModal: () => void;
+    mediaState: typeof MEDIA_INIT_STATE;
 }
 
 const MediaContext = createContext({} as MediaContext);
@@ -26,7 +27,9 @@ export const MediaProvider = ({ children }: { children: ReactNode }) => {
         setIsImageModalOpen(!isImageModalOpen);
     };
     return (
-        <MediaContext.Provider value={{ isModalOpen, handleMediaModal }}>
+        <MediaContext.Provider
+            value={{ isModalOpen, handleMediaModal, mediaState }}
+        >
             {children}
         </MediaContext.Provider>
     );

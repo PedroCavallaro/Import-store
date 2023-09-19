@@ -6,8 +6,8 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer/Footer";
 import Description from "@/components/Product/Description";
-import VideoModal from "@/components/Product/VideoModal";
 import MediaModal from "@/components/MediaModal";
+import ImagesModal from "@/components/Product/ImageModal/ImagesModal";
 
 const RelatedProducts = dynamic(
     () => import("@/components/Product/RelatedProducts"),
@@ -35,7 +35,8 @@ export default async function Product({ params }: { params: { id: string } }) {
     return (
         <main className="flex flex-col gap-6">
             <MediaModal>
-                <VideoModal videoPath="pasd" />
+                <ImagesModal pictures={pictures} />
+                {/* <VideoModal videoPath="pasd" /> */}
             </MediaModal>
 
             <Hero
